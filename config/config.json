@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "AdamFirdaus",
+    "password": "",
+    "database": "agricount",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false,
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "AdamFirdaus",
+    "password": "",
+    "database": "agricount",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false,
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "AdamFirdaus",
+    "password": "",
+    "database": "agricount",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "logging": false,
+    "operatorsAliases": false
+  }
+}

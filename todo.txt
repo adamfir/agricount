@@ -1,0 +1,19 @@
+API List
+
+gak pake token dulu aja kali yak,.
+
+1. Auth
+ a. Login (username, password) [done]
+ b. Add user (nama, username, password, etc.) [done]
+ c. Delete user (maybe) [done]
+ d. Edit user [done]
+
+2. Panen
+ a. GET Cek urutan keberapa buah ini pada panen kali ini. (ga usah, ini pake parameter aja)
+ b. POST tambah buah kedaftar panen => dari 7 
+    parameter mungkin cuma urutan buah sama tanggal aja yang disimpen, sisanya dari parameter.
+ c. GET Lihat hasi panen: gw kirim sektor dan tanggal panen, 
+    gw dapet jumlah buah, berat dan total profit
+ d. GET show list parameter (nama perusahaan, alamat, 
+    harga buah, berat buah) => apakah pupuk, insektisida dan varietas buah juga parameter?
+ e. PUT edit parameter (gw kasih/post 4 parameter langsung, jadi gak satu2)
