@@ -19,7 +19,7 @@
   },
   "production": {
     "username": "postgres",
-    "password": "",
+    "password": "qwerty0987",
     "database": "agricount",
     "host": "127.0.0.1",
     "dialect": "postgres",
