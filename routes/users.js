@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 // const router = require('express-promise-router')();
-let UserController = require('../controllers/user');
+let UserController = require('../controllers/UserController');
 let {validateBody, schemas} = require('../middlewares/validation');
 
 let userController = new UserController();

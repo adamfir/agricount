@@ -27,7 +27,7 @@ class LaporanPanenController {
         data.berat = aveWeight.value*data.jumlahBuah/1000;
         data.satuan = "Kg",
         data.harga = data.berat*price.value;
-        return res.json({data});
+        return res.json({data, status:200});
     }
     
 }

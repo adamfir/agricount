@@ -108,10 +108,10 @@ class UserController {
                     });
                 }
                 delete user.dataValues.password;
-                return res.status(200).json({user});
+                return res.status(200).json({data:user, status:200});
             }
             else{
-                return res.status(401).json({message:"Username atau password salah!"});
+                return res.status(401).json({data:{message:"Username atau password salah!"}, status:200});
             }
         }
         else {
@@ -119,10 +119,10 @@ class UserController {
             let isMatch = await bcrypt.compare(password,user.password);
             delete user.dataValues.password;
             if(isMatch){
-                return res.status(200).json({user});
+                return res.status(200).json({data:user, status:200});
             }
             else{
-                return res.status(401).json({message:"Username atau password salah!"});
+                return res.status(401).json({data:{message:"Username atau password salah!"}, status:401});
             }
         }
     }
@@ -134,7 +134,7 @@ class UserController {
             name, username, email, password, otoritas
         });
         delete user.dataValues.password;
-        return res.status(201).json({user});
+        return res.status(201).json({data:user, status:200});
     }
     async edit(req,res,next){
         let {name, username, email, password, otoritas} = req.value.body;
@@ -150,12 +150,12 @@ class UserController {
         }
         await user.save();
         delete user.dataValues.password;
-        return res.json({user});
+        return res.json({data:user, status:201});
     }
     async gets(req,res,next){
         let admins = await models.user.scope('withoutPassword').findAll({where:{otoritas:'admin'}, exclude: 'password'});
         let petanis = await models.user.scope('withoutPassword').findAll({where:{otoritas:'petani'}});
-        return res.json({admins, petanis});
+        return res.json({data:{admins, petanis}, status:200});
     }
     async delete(req,res,next){
         let {id} = req.params;
@@ -163,10 +163,10 @@ class UserController {
             where:{id}
         });
         if(hapus === 1){
-            return res.json({message:"success"});
+            return res.json({data:{message:"success"}, status:200});
         }
         else{
-            return res.json({message:"gagal"});
+            return res.json({data:{message:"gagal"}, status:200});
         }
     }
 }

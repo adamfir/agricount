@@ -21,11 +21,11 @@ class ParameterController {
         data.jenisPestisida = await models.parameter.scope('valueOnly').findOne({where:{code:'BUAH_PARAM',name:'PESTISIDA'}});
         data.jenisPupuk = await models.parameter.scope('valueOnly').findOne({where:{code:'BUAH_PARAM',name:'PUPUK'}});
         data.beratRata = await models.parameter.scope('valueOnly').findOne({where:{code:'PANEN_PARAM',name:'FRUIT_AVE_WEIGHT'}});
-        return res.json({data});
+        return res.json({data, status:200});
     }
     async getParameters(req,res,next){
         let parameters = await models.parameter.findAll({order:[['id','ASC']]});
-        return res.json({parameters});
+        return res.json({data:{parameters}, status:200});
     }
     async editParameter(code,name,value){
         try{
@@ -50,7 +50,7 @@ class ParameterController {
             let editParameter = await this.editParameter(code,name,value);
             results.push(editParameter);
         }
-        return res.json({mes:"Success", results});
+        return res.json({data:{mes:"Success", results}, status:200});
     }
 }
 
