@@ -15,6 +15,8 @@ class LaporanPanenController {
         let laporanPanen = await models.LaporanPanen.scope('withoutTimestamp').findOne({where:{
             tanggal: { [Op.eq]: date }
         }});
+        if(laporanPanen==undefined || laporanPanen==null)
+            return res.json({data:{message:"Tidak ada data"},status:400})
         let aveWeight = await models.parameter.findOne({where:{
             code: "PANEN_PARAM", name: "FRUIT_AVE_WEIGHT"
         }});
