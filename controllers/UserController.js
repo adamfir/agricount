@@ -35,6 +35,7 @@ class UserController {
                 let estimasiPanen = await models.parameter.count({where:{code:'PANEN_PARAM',name:'ESTIMASI'}});
                 let jenisPestisida = await models.parameter.count({where:{code:'BUAH_PARAM',name:'PESTISIDA'}});
                 let jenisPupuk = await models.parameter.count({where:{code:'BUAH_PARAM',name:'PUPUK'}});
+                let kelilingBuah = await models.parameter.count({where:{code:'BUAH_PARAM',name:'KELILING'}});
                 if(beratRata == 0){
                     beratRata = await models.parameter.create({
                         code: 'PANEN_PARAM',
@@ -105,6 +106,14 @@ class UserController {
                         name: 'PUPUK',
                         value: 'Pupuk Kandang, NPK, KCL',
                         keterangan: 'Jenis pupuk yang digunakan.'
+                    });
+                }
+                if(kelilingBuah == 0){
+                    kelilingBuah = await models.parameter.create({
+                        code: 'BUAH_PARAM',
+                        name: 'KELILING',
+                        value: 0,
+                        keterangan: 'Keliling awal buah.'
                     });
                 }
                 delete user.dataValues.password;

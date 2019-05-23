@@ -9,6 +9,11 @@ gak pake token dulu aja kali yak,.
  d. Edit user [done]
 
 2. Panen
+ a. API untuk get data yg dicetak di BAR CODE. [done]
+ b. Cron Job buat bikin laporan panen tiap tengah malem. [done]
+ c. API get ALL parameter.
+ d. API edit langsung semua parameter.
+
  a. GET Cek urutan keberapa buah ini pada panen kali ini. (ga usah, ini pake parameter aja)
  b. POST tambah buah kedaftar panen => dari 7 
     parameter mungkin cuma urutan buah sama tanggal aja yang disimpen, sisanya dari parameter.
@@ -17,3 +22,5 @@ gak pake token dulu aja kali yak,.
  d. GET show list parameter (nama perusahaan, alamat, 
     harga buah, berat buah) => apakah pupuk, insektisida dan varietas buah juga parameter?
  e. PUT edit parameter (gw kasih/post 4 parameter langsung, jadi gak satu2)
+
+3. Parameter keliling awal buah.
