@@ -113,7 +113,7 @@ class UserController {
                         code: 'BUAH_PARAM',
                         name: 'KELILING',
                         value: 0,
-                        keterangan: 'Keliling awal buah.'
+                        keterangan: 'Keliling awal buah (mm).'
                     });
                 }
                 delete user.dataValues.password;
